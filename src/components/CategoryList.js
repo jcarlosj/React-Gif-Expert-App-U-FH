@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-export const Category = ({ category }) => {
+export const CategoryList = ({ category }) => {
 
     const [ images, setImages ] = useState( [] );
 

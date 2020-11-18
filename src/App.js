@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 /** Component */
 import { SearchCategory } from './components/SearchCategory';
-import { Category } from './components/Category';
+import { CategoryList } from './components/CategoryList';
 
 /** Functional Component */
 const App = () => {
@@ -19,7 +19,7 @@ const App = () => {
 
             <ol>
                 {   categories.map( ( category, idx ) => (
-                        <Category 
+                        <CategoryList 
                             key={ `${ idx }-${ category }`} 
                             category={ category } 
                         />
