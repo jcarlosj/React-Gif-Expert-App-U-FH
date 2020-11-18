@@ -8,7 +8,7 @@ import { Category } from './components/Category';
 const App = () => {
 
     const [ categories, setCategories ] = useState(
-        [ 'Movies', 'Series', 'Comics' ]
+        [ 'Movies' ]
     );
 
     return (  
