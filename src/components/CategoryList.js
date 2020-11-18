@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
+/** Component */
+import { CategoryItem } from './CategoryItem';
+
+/** Functional Components */
 export const CategoryList = ({ category }) => {
 
     const [ images, setImages ] = useState( [] );
@@ -30,15 +34,15 @@ export const CategoryList = ({ category }) => {
     return (
         <>
             <h3>{ category }</h3>
-            <ol>
-                {   images.map( ({ id, title, url }) => (
-                        <li key={ id }>
-                            <h4>{ title }</h4>
-                            <img src={ url } alt={ title } title={ title } />
-                        </li>
-                    ))
-                }
-            </ol>
+            
+            {   images.map( image => (
+                    <CategoryItem 
+                        key={ image.id }
+                        image={ image }
+                    />
+                ))
+            }
+            
         </>
     )
 }
