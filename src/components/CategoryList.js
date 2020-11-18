@@ -38,7 +38,7 @@ export const CategoryList = ({ category }) => {
             {   images.map( image => (
                     <CategoryItem 
                         key={ image.id }
-                        image={ image }
+                        { ...image }    //  Spread
                     />
                 ))
             }

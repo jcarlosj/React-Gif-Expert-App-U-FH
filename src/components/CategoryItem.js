@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const CategoryItem = ( { image: { title, url } } ) => {
+export const CategoryItem = ( { title, url } ) => {
     return (
         <>
             <h4>{ title }</h4>
