@@ -13,7 +13,7 @@ const App = () => {
     return (  
         <>
             <h2>GifExpertApp</h2>
-            <SearchCategory />
+            <SearchCategory setCategories={ setCategories } />
             <hr />
 
             <ol>

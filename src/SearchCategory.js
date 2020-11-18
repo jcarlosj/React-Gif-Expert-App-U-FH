@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export const SearchCategory = () => {
+export const SearchCategory = ({ setCategories }) => {
 
     const [ inputValue, setInputValue] = useState( '' );
 
@@ -9,8 +9,20 @@ export const SearchCategory = () => {
         setInputValue( event.target.value );
     }
 
+    const handleSubmit = event => {
+        event.preventDefault();
+
+        if( inputValue.trim().length > 2 ) {
+            setCategories( categories => [ ...categories, inputValue ] );
+            setInputValue( '' );
+        }
+        
+    }
+
     return (
-        <form>
+        <form
+            onSubmit={ handleSubmit }
+        >
             <pre>{ JSON.stringify( inputValue, null, 4 ) }</pre>
             <input 
                 type="text" 
