@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
 /** Component */
-import { SearchCategory } from './SearchCategory'
+import { SearchCategory } from './components/SearchCategory';
+import { Category } from './components/Category';
 
 /** Functional Component */
 const App = () => {
@@ -17,9 +18,12 @@ const App = () => {
             <hr />
 
             <ol>
-                {   categories.map( ( category, idx ) => {
-                        return <li key={ idx }>{ category }</li>;
-                    }) 
+                {   categories.map( ( category, idx ) => (
+                        <Category 
+                            key={ `${ idx }-${ category }`} 
+                            category={ category } 
+                        />
+                    )) 
                 }
             </ol>
         </>
