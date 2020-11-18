@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 export const Category = ({ category }) => {
+
+    const [ images, setImages ] = useState( [] );
+
+    useEffect( () => {
+        requestToGiphy();
+    }, [] );
 
     const requestToGiphy = async () => {    //  https://developers.giphy.com/
         const 
@@ -17,12 +23,22 @@ export const Category = ({ category }) => {
             };
         });
         console.log( gifs );
+        setImages( gifs );
+
     }
-    requestToGiphy();
 
     return (
         <>
             <h3>{ category }</h3>
+            <ol>
+                {   images.map( ({ id, title, url }) => (
+                        <li key={ id }>
+                            <h4>{ title }</h4>
+                            <img src={ url } alt={ title } title={ title } />
+                        </li>
+                    ))
+                }
+            </ol>
         </>
     )
 }
