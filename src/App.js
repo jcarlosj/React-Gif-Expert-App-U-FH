@@ -8,7 +8,7 @@ import { CategoryList } from './components/CategoryList';
 const App = () => {
 
     const [ categories, setCategories ] = useState(
-        [ 'Movies' ]
+        [ 'Once upon a time' ]
     );
 
     return (  
