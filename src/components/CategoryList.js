@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
+/** Hooks */
+import { useFetchGifs } from '../hooks/useFecthGifs';
+
 /** Helpers */
 import { requestToGiphy } from '../helpers/giphyHelper';
 
@@ -8,6 +11,8 @@ import { CategoryItem } from './CategoryItem';
 
 /** Functional Components */
 export const CategoryList = ({ category }) => {
+
+    const { loading, data } = useFetchGifs();
 
     const [ images, setImages ] = useState( [] );
 
@@ -20,6 +25,12 @@ export const CategoryList = ({ category }) => {
     return (
         <>
             <h3>{ category }</h3>
+
+            {   loading
+                    ?   <p>Cargando...</p>
+                    :   <pre><code>{ JSON.stringify( data, null, 4 ) }</code></pre>
+            }
+
             <div className="card-grid">
             
                 {   images.map( image => (

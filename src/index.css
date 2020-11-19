@@ -70,3 +70,21 @@ input {
         padding: .4rem;
     }
 }
+
+pre {
+    background-color: black;
+    overflow-x: auto;
+    padding: 20px;
+    white-space: pre-wrap;
+}
+
+pre[data-lang]::before { 
+    content: attr(data-lang); 
+    display: block; 
+}
+
+code {
+    color: white;
+    font-family: "Courier New", Courier, monospace;
+    
+}
