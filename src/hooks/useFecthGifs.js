@@ -15,15 +15,11 @@ export const useFetchGifs = ( category ) => {
         requestToGiphy( category )
             .then( gifs => {
 
-                setTimeout( () => {
-
-                    setState({
-                        loading: false,
-                        data: gifs
-                    });
-                    console.log( gifs );
-                    
-                }, 2000 );
+                setState({
+                    loading: false,
+                    data: gifs
+                });
+                console.log( gifs );
 
             })
             .catch( error => console.log );
