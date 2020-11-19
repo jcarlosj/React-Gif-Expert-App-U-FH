@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export const CategoryItem = ( { title, url } ) => {
     return (
@@ -8,3 +9,8 @@ export const CategoryItem = ( { title, url } ) => {
         </div>
    )
 }
+
+CategoryItem.propTypes = {
+    title: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired
+};

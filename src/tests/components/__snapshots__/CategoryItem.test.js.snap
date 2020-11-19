@@ -1,10 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<CategoryItem /> debe desplegar el componente correctamente 1`] = `
+exports[`<CategoryItem /> debe desplegar correctamente 1`] = `
 <div
   className="card animate__animated animate__bounceIn"
 >
-  <img />
-  <h4 />
+  <img
+    alt="Once Upon a Time"
+    src="https://media4.giphy.com/media/IBzHGPbQLV5Fm/giphy.gif?cid=3a428325tnk0tt3ae9ee85i0zam2aldtbizw22uyqpllhw15&rid=giphy.gif"
+    title="Once Upon a Time"
+  />
+  <h4>
+    Once Upon a Time
+  </h4>
 </div>
 `;
