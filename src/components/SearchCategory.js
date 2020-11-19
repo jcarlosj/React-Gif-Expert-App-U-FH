@@ -14,7 +14,7 @@ export const SearchCategory = ({ setCategories }) => {
         event.preventDefault();
 
         if( inputValue.trim().length > 2 ) {
-            setCategories( categories => [ ...categories, inputValue ] );
+            setCategories( categories => [ inputValue, ...categories ] );
             setInputValue( '' );
         }
         

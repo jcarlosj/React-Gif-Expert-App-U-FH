@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
+/** Helpers */
+import { requestToGiphy } from '../helpers/giphyHelper';
+
 /** Component */
 import { CategoryItem } from './CategoryItem';
 
@@ -9,27 +12,10 @@ export const CategoryList = ({ category }) => {
     const [ images, setImages ] = useState( [] );
 
     useEffect( () => {
-        requestToGiphy();
-    }, [] );
-
-    const requestToGiphy = async () => {    //  https://developers.giphy.com/
-        const 
-            url = `https://api.giphy.com/v1/gifs/search?q=superman&limit=9&api_key=6t2zjzJn3x3LILIFUpF6GKKcR95JTJhK`,
-            response = await fetch( url ),
-            { data } = await response.json();
-        // console.log( data );
-
-        const gifs = data.map( image => {
-            return {
-                id: image.id,
-                title: image.title,
-                url: image.images?.downsized_medium.url
-            };
-        });
-        console.log( gifs );
-        setImages( gifs );
-
-    }
+        requestToGiphy( category )
+            .then( setImages )          //  Es igual a: .then( gifs => setImages( gifs ) )
+            .catch( error => console.log );
+    }, [ category ] );
 
     return (
         <>
