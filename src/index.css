@@ -8,8 +8,65 @@ body {
 
 input {
     border: 1px solid gray;
+    box-sizing: border-box;
     color: gray;
     font-size: 1.3rem;
     width: 100%;
     padding: .3rem .6rem;
+}
+
+.card-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem 0;
+}
+
+.card-grid h3 {
+    display: block;
+}
+
+/** CategoryItem */
+.card {
+    align-content: center;
+    border: 1px solid grey;
+    border-radius: 5px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+}
+
+@media ( min-width: 768px ) {
+    .card-grid {
+        gap: 1rem;
+    }
+    .card {
+        width: unset;
+    }
+}
+
+.card img { 
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.card h4 {
+    margin: .4rem;
+    padding: .4rem .8rem;
+}
+
+@media ( min-width: 768px ) {
+    .card img { 
+        margin: 0 auto;
+        max-width: 100%;
+        width: 90%;
+    }
+    .card h4 {
+        margin: .2rem 1.4rem;
+        padding: .4rem;
+    }
 }

@@ -34,15 +34,17 @@ export const CategoryList = ({ category }) => {
     return (
         <>
             <h3>{ category }</h3>
+            <div className="card-grid">
             
-            {   images.map( image => (
-                    <CategoryItem 
-                        key={ image.id }
-                        { ...image }    //  Spread
-                    />
-                ))
-            }
-            
+                {   images.map( image => (
+                        <CategoryItem 
+                            key={ image.id }
+                            { ...image }    //  Spread
+                        />
+                    ))
+                }
+                
+            </div>
         </>
     )
 }

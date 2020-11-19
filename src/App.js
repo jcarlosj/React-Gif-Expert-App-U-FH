@@ -17,15 +17,14 @@ const App = () => {
             <SearchCategory setCategories={ setCategories } />
             <hr />
 
-            <ol>
-                {   categories.map( ( category, idx ) => (
-                        <CategoryList 
-                            key={ `${ idx }-${ category }`} 
-                            category={ category } 
-                        />
-                    )) 
-                }
-            </ol>
+            {   categories.map( ( category, idx ) => (
+                    <CategoryList 
+                        key={ `${ idx }-${ category }`} 
+                        category={ category } 
+                    />
+                )) 
+            }
+        
         </>
     );
 }
