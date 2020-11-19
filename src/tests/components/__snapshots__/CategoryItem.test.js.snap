@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CategoryItem /> debe desplegar el componente correctamente 1`] = `
+<div
+  className="card animate__animated animate__bounceIn"
+>
+  <img />
+  <h4 />
+</div>
+`;
