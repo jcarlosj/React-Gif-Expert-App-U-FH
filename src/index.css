@@ -73,7 +73,8 @@ input {
 
 pre {
     background-color: black;
-    overflow-x: auto;
+    height: 15rem;
+    overflow: auto;
     padding: 20px;
     white-space: pre-wrap;
 }

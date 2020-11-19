@@ -1,10 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 /** Hooks */
 import { useFetchGifs } from '../hooks/useFecthGifs';
-
-/** Helpers */
-import { requestToGiphy } from '../helpers/giphyHelper';
 
 /** Component */
 import { CategoryItem } from './CategoryItem';
@@ -12,24 +9,13 @@ import { CategoryItem } from './CategoryItem';
 /** Functional Components */
 export const CategoryList = ({ category }) => {
 
-    const { loading, data } = useFetchGifs();
-
-    const [ images, setImages ] = useState( [] );
-
-    useEffect( () => {
-        requestToGiphy( category )
-            .then( setImages )          //  Es igual a: .then( gifs => setImages( gifs ) )
-            .catch( error => console.log );
-    }, [ category ] );
+    const { loading, data:images } = useFetchGifs( category );
 
     return (
         <>
             <h3>{ category }</h3>
 
-            {   loading
-                    ?   <p>Cargando...</p>
-                    :   <pre><code>{ JSON.stringify( data, null, 4 ) }</code></pre>
-            }
+            {   loading && <p>Cargando...</p> }
 
             <div className="card-grid">
             

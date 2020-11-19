@@ -1,19 +1,33 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
+/** Helper */
+import { requestToGiphy } from '../helpers/giphyHelper';
 
 /** Custom Hook */
-export const useFetchGifs = () => {
+export const useFetchGifs = ( category ) => {
 
     const [ state, setState ] = useState({
         loading: true,
         data: []
     });
 
-    setTimeout( () => {
-        setState({
-            loading: false,
-            data: [ 'uno', 'dos', 'tres', 'cuatro', 'cinco' ]
-        });
-    }, 3000 );
+    useEffect( () => {
+        requestToGiphy( category )
+            .then( gifs => {
+
+                setTimeout( () => {
+
+                    setState({
+                        loading: false,
+                        data: gifs
+                    });
+                    console.log( gifs );
+                    
+                }, 2000 );
+
+            })
+            .catch( error => console.log );
+    }, [ category ] );
 
     return state;
 }
