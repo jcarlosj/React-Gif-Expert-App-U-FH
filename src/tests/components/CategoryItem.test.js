@@ -43,4 +43,16 @@ describe( '<CategoryItem />', () => {
 
     });
 
+    test( 'debe tener la clase \'animate__bounceIn\'', () => {
+
+        const 
+            $div = wrapper.find( 'div' ),
+            claseName = $div.prop( 'className' );
+
+        // console.log( claseName );
+        
+        expect( claseName.includes( 'animate__bounceIn' ) ).toBe( true );
+
+    });
+
 });
