@@ -29,4 +29,18 @@ describe( '<CategoryItem />', () => {
 
     });
 
+    test( 'debe tener imagen con src, alt y title como en los props', () => {
+
+        const $img = wrapper.find( 'img' );  
+        // console.log( $img.html() );
+        // console.log( $img.props() );
+        // console.log( $img.props().src );
+        // console.log( $img.prop( 'src' ) );
+        
+        expect( $img.prop( 'src' ) ).toBe( image.url );
+        expect( $img.prop( 'alt' ) ).toBe( image.title );
+        expect( $img.prop( 'title' ) ).toBe( image.title );
+
+    });
+
 });
