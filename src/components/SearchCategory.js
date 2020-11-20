@@ -13,6 +13,7 @@ export const SearchCategory = ({ setCategories }) => {
 
     const handleSubmit = event => {
         event.preventDefault();
+        console.log( 'handleSubmit', inputValue );
 
         if( inputValue.trim().length > 2 ) {
             setCategories( categories => [ inputValue, ...categories ] );

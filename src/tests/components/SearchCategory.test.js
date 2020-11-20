@@ -5,11 +5,17 @@ import { SearchCategory } from '../../components/SearchCategory';
 
 describe( '<SearchCategory />', () => {
 
-    const
-        setCategories = () => {}, 
+    const setCategories = jest.fn();
+    let wrapper = shallow(
+        <SearchCategory setCategories={ setCategories } />
+    );
+
+    beforeEach( () => {
+        jest.clearAllMocks();
         wrapper = shallow(
             <SearchCategory setCategories={ setCategories } />
         );
+    });
 
     test( 'debe desplegar correctamente', () => {
         
@@ -25,6 +31,15 @@ describe( '<SearchCategory />', () => {
 
         $input.simulate( 'change', { target: { value } } );
         expect( wrapper.find( 'pre' ).text().trim() ).toBe( JSON.stringify( value, null, 4 ) );
+
+    });
+
+    test( 'NO debe actualizar estados setCategories/setInputValue al lanzar sumbit del formulario con el input vacio', () => {
+        
+        const $form = wrapper.find( 'form' );
+
+        $form.simulate( 'submit', { preventDefault(){} } );
+        expect( setCategories ).not.toHaveBeenCalled();
 
     });
     
