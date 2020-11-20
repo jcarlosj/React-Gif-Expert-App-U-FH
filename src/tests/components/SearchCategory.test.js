@@ -16,5 +16,16 @@ describe( '<SearchCategory />', () => {
         expect( wrapper ).toMatchSnapshot();
 
     });
+
+    test( 'debe cambiar contenido de input', () => {
+        
+        const
+            value = 'Testing input',
+            $input = wrapper.find( 'input' );
+
+        $input.simulate( 'change', { target: { value } } );
+        expect( wrapper.find( 'pre' ).text().trim() ).toBe( JSON.stringify( value, null, 4 ) );
+
+    });
     
 });

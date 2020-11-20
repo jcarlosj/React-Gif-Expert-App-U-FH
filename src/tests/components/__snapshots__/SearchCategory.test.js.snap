@@ -4,6 +4,9 @@ exports[`<SearchCategory /> debe desplegar correctamente 1`] = `
 <form
   onSubmit={[Function]}
 >
+  <pre>
+    ""
+  </pre>
   <input
     onChange={[Function]}
     type="text"

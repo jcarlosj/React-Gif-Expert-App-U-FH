@@ -8,6 +8,7 @@ export const SearchCategory = ({ setCategories }) => {
     const handleInputChange = event => {
         // console.log( event.target.value );
         setInputValue( event.target.value );
+        console.log( 'handleInputChange' );
     }
 
     const handleSubmit = event => {
@@ -24,7 +25,7 @@ export const SearchCategory = ({ setCategories }) => {
         <form
             onSubmit={ handleSubmit }
         >
-            {/* <pre>{ JSON.stringify( inputValue, null, 4 ) }</pre> */}
+            <pre>{ JSON.stringify( inputValue, null, 4 ) }</pre>
             <input 
                 type="text" 
                 value={ inputValue }
