@@ -15,3 +15,21 @@ exports[`<CategoryList /> debe desplegar correctamente 1`] = `
   />
 </Fragment>
 `;
+
+exports[`<CategoryList /> debe mostrar registros cuando las imagenes han cargado 'useFetchGifs' 1`] = `
+<Fragment>
+  <h3>
+    Game of Thrones
+  </h3>
+  <div
+    className="card-grid"
+  >
+    <CategoryItem
+      id="iiuyuidfsf454rdf"
+      key="iiuyuidfsf454rdf"
+      title="The Simpsons"
+      url="http://localhost/cualquier/imagen.jpg"
+    />
+  </div>
+</Fragment>
+`;
