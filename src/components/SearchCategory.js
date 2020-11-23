@@ -8,7 +8,7 @@ export const SearchCategory = ({ setCategories }) => {
     const handleInputChange = event => {
         // console.log( event.target.value );
         setInputValue( event.target.value );
-        console.log( 'handleInputChange' );
+        console.log( 'handleInputChange', inputValue );
     }
 
     const handleSubmit = event => {

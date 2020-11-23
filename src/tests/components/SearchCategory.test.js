@@ -42,5 +42,20 @@ describe( '<SearchCategory />', () => {
         expect( setCategories ).not.toHaveBeenCalled();
 
     });
+
+    test( 'debe actualizar estados setCategory/setInputValue al lanzar sumbit del formulario', () => {
+
+        const
+            value = 'Testing input';
+
+        wrapper.find( 'input' ).simulate( 'change', { target: { value } } );
+        wrapper.find( 'form' ).simulate( 'submit', { preventDefault(){} } );
+
+        expect( setCategories ).toHaveBeenCalled();                                 //  Que haya sido llamada la funcion setCategories
+        expect( setCategories ).toHaveBeenCalledTimes( 1 );                         //  Que haya sido llamada una ves la funcion setCategories
+        expect( setCategories ).toHaveBeenCalledWith( expect.any( Function ) );     //  Que haya sido llamada con una funcion por parametro la funcion setCategories
+        expect( wrapper.find( 'input' ).prop( 'value' ) ).toBe( '' );               //  Que el valor del input este vacio
+
+    });
     
 });
