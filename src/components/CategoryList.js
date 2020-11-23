@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 /** Hooks */
 import { useFetchGifs } from '../hooks/useFecthGifs';
@@ -30,4 +31,8 @@ export const CategoryList = ({ category }) => {
             </div>
         </>
     )
+}
+
+CategoryList.propTypes = {
+    category: PropTypes.string.isRequired
 }
