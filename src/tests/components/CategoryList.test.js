@@ -53,7 +53,9 @@ describe( '<CategoryList />', () => {
             />
         );
 
-        expect( wrapper ).toMatchSnapshot();    //  Verifica que un valor coincida con la instantánea (Snapshop) más reciente
+        expect( wrapper ).toMatchSnapshot();                                    //  Verifica que un valor coincida con la instantánea (Snapshop) más reciente
+        expect( wrapper.find( 'p' ).exists() ).toBe( false );                   //  Verifica que no exista el elemento parrafo (Cargando...)
+        expect( wrapper.find( 'CategoryItem' ).length ).toBe( gifs.length );    //  Verifica la cantidad de componentes que renderizan imagenes    
 
     }); 
 
