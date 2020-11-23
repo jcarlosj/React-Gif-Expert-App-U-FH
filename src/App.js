@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types'
 
 /** Component */
 import { SearchCategory } from './components/SearchCategory';
 import { CategoryList } from './components/CategoryList';
 
 /** Functional Component */
-const App = () => {
+const App = ({ defaultCategory }) => {
 
-    const [ categories, setCategories ] = useState(
-        [ 'Once upon a time' ]
-    );
+    const [ categories, setCategories ] = useState( defaultCategory );
 
     return (  
         <>
@@ -27,6 +26,14 @@ const App = () => {
         
         </>
     );
+}
+
+App.propTypes = {
+    defaultCategory: PropTypes.string
+}
+
+App.defaultProps = {
+    defaultCategory: [ 'Once Upon a Time' ]
 }
  
 export default App;
