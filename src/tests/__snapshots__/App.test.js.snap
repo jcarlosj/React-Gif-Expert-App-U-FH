@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> debe desplegar correctamente 1`] = `
+<Fragment>
+  <h2>
+    GifExpertApp
+  </h2>
+  <SearchCategory
+    setCategories={[Function]}
+  />
+  <hr />
+  <CategoryList
+    category="Once upon a time"
+    key="0-Once upon a time"
+  />
+</Fragment>
+`;
