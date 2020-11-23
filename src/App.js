@@ -29,7 +29,7 @@ const App = ({ defaultCategory }) => {
 }
 
 App.propTypes = {
-    defaultCategory: PropTypes.string
+    defaultCategory: PropTypes.array
 }
 
 App.defaultProps = {

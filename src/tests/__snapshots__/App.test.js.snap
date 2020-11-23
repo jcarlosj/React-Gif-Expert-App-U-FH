@@ -10,8 +10,28 @@ exports[`<App /> debe desplegar correctamente 1`] = `
   />
   <hr />
   <CategoryList
-    category="Once upon a time"
-    key="0-Once upon a time"
+    category="Once Upon a Time"
+    key="0-Once Upon a Time"
+  />
+</Fragment>
+`;
+
+exports[`<App /> debe mostrar el listado de categorias 1`] = `
+<Fragment>
+  <h2>
+    GifExpertApp
+  </h2>
+  <SearchCategory
+    setCategories={[Function]}
+  />
+  <hr />
+  <CategoryList
+    category="Mazinger Z"
+    key="0-Mazinger Z"
+  />
+  <CategoryList
+    category="Transformers"
+    key="1-Transformers"
   />
 </Fragment>
 `;
