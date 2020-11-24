@@ -19,7 +19,7 @@ export const useFetchGifs = ( category ) => {
                     loading: false,
                     data: gifs
                 });
-                console.log( gifs );
+                // console.log( gifs );
 
             })
             .catch( error => console.log );
